@@ -4,7 +4,7 @@
 
 This is a proposal for the simplest use of a FaceRecognition system.
 
-<image src="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/countr_session_diagram.png?raw=true" alt="SessionDiagram" style="width:500px"/>
+<image src="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/countr_session_diagram.png?raw=true" alt="SessionDiagram" style="width:700px"/>
 
 ### Server
 Simply start the server.
