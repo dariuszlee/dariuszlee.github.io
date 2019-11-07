@@ -4,6 +4,8 @@
 
 This is a proposal for the simplest use of a FaceRecognition system.
 
+![Session](https://github.com/dariuszlee/dariuszlee.github.io/blob/master/countr_session_diagram.png?raw=true)
+
 ### Server
 Simply start the server.
 ```bash
