@@ -1,11 +1,8 @@
 # CountR Api Documentation
-
 ## Introduction / Quick Start
 
 This is a proposal for the simplest use of a FaceRecognition system.
 
-<image src="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/countr_session_diagram.png?raw=true" alt="SessionDiagram" style="width:600px"/>
-[Better quality image](https://github.com/dariuszlee/dariuszlee.github.io/blob/master/countr_session_diagram.png?raw=true)
 
 ### Server
 Simply start the server.
@@ -28,19 +25,30 @@ Clients would simply need to connect to a different port.
 The limit for number of servers is likely the size of GPU memory.
 
 ### Client
-The code itself can be delivered as a Jar dependency, through Maven, for example.
 
-#### Proposal 1
-From application code, we can start a session and query a session.
+<a><image src="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/DataFlow2.png?raw=true" alt="SessionDiagram" style="width:600px"/>
+</a>
+<!-- <a href="./DataFlow2.png"><image src="./DataFlow2.png" alt="SessionDiagram" style="width:100%"/> -->
+<!-- </a> -->
+
+Here is the above image in Java-like pseudo-code.
+
 ```java
+Integer timeout = 1000
 FaceRecognitionSession session = FaceRecognition.createSession(6000);
-session.identify();
 while(true){
-    // Do some work that takes time
-    FaceRecognitionInfo info = session.GetSessionInfo();
-    if(info.confidenceInterval > threshold)
-        break;
+    GetFaceStatus faceStatus = session.GetFace(timeout)
+    if(faceStatus.IsFound()){
+        FaceRecognitionStatus recognizedStatus = session.Recognize(faceStatus, timeout)
+        if(recognizedStatus.IsRecognized()){
+            break
+        }
+    }
+    else{
+        // Do something else
+    }
 }
+ArrayList<FaceRecognitionInfo> sessionResults = session.GetResults()
 session.close()
 ```
 
@@ -52,6 +60,10 @@ class FaceRecognitionInfo {
     float confidenceInterval;
 }
 ```
+
+## Delivery
+
+Client and server can be delivered as a JAR through maven or a private repository.
 
 ## Conclusion
 
