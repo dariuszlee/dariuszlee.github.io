@@ -28,7 +28,7 @@ The limit for number of servers is likely the size of GPU memory.
 
 #### Basic Workflow
 
-<a><image src="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/DataFlow2.png?raw=true" alt="SessionDiagram" style="width:100%"/>
+<a href="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/DataFlow2.png?raw=true"><image src="https://github.com/dariuszlee/dariuszlee.github.io/blob/master/DataFlow2.png?raw=true" alt="SessionDiagram" style="width:100%"/>
 </a>
 <!-- <a href="./DataFlow2.png"><image src="./DataFlow2.png" alt="SessionDiagram" style="width:100%"/> -->
 <!-- </a> -->
